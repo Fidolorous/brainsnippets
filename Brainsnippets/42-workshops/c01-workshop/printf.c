@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_swaptest.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggyevi-s <ggyevi-s@student.42prague.com>   +#+  +:+       +#+        */
+/*   By: ggyevi-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 16:42:45 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/12 16:59:40 by ggyevi-s         ###   ########.fr       */
+/*   Created: 2023/06/12 15:44:30 by ggyevi-s          #+#    #+#             */
+/*   Updated: 2023/06/13 14:58:27 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//Create a function that swaps the value of two integers
+//whose addresses are entered as parameters.
+#include<stdio.h>
 
-void	ft_swap(int *a, int *b)
+void	ft_swap(int a, int b)
 {
-	int c;
-	c = *a;
-	*a = *b;
-	*b = c;
-	printf("int %i\n", *a);
-	printf("int %i\n", *b);
+	a = 1;
+	b = 2;
+	printf("%i \n%i", a, b);
+
 }
 
 int	main(void)
-{
-	int x;
-	int y;
-	x = 4;
-	y = 2;
-	ft_swap(&x, &y);
+{	
+	int 	a;
+	int	b;
+	ft_swap(a, b);
 }
