@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggyevi-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 15:44:30 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/14 17:51:11 by ggyevi-s         ###   ########.fr       */
+/*   Created: 2023/06/14 13:51:33 by ggyevi-s          #+#    #+#             */
+/*   Updated: 2023/06/14 17:42:06 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//THIS FILE REMINDS YOU THE PRINF FUNCTION.
-//original task:
-//Create a function that swaps the value of two integers
-//whose addresses are entered as parameters.
-#include<stdio.h>
 
-void	ft_swap(int a, int b)
+#include <stdio.h>
+//  This function divides parameters a by b. The result of this division is stored in the
+//  int pointed by a. The remainder of the division is stored in the int pointed by b.
+
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	a = 1;
-	b = 2;
-	printf("%i \n%i", a, b);
-
+	int	c;
+	if(b)
+	{
+		c = *a / *b;
+		*b = *a % *b;
+		*a = c;
+	}
 }
 
 int	main(void)
-{	
+
+{
 	int 	a;
-	int	b;
-	ft_swap(a, b);
-}
+	int 	b;
+	a = 10;
+	b = 3;
+	ft_ultimate_div_mod(&a, &b);
+	printf("division:%i \nremainder:%i", a, b);
+}			
