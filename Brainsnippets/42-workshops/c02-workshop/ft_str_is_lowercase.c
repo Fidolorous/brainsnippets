@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggyevi-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 18:31:40 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/22 18:50:10 by ggyevi-s         ###   ########.fr       */
+/*   Created: 2023/06/21 17:38:51 by ggyevi-s          #+#    #+#             */
+/*   Updated: 2023/06/21 18:02:02 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_lowercase(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
+	while (*str)
 	{
-		dest[i] = src[i];
-		i++;
+		if ((*str >= 97 && *str <= 122))
+		      	++str;
+	else 
+		return (0);
 	}
-	dest[i] = '\0';
-	return (dest);
-}		
+	
+	return (1);
+}
 
-/*
 int	main()
 {
-	//we give value to the chars
-	//ask someone the logic of what being printed
-	char	a[] = "b";
-	char	b[] = "c";
-
-	printf("%s\n", ft_strcpy(a, b));
+	printf("%d\n", ft_str_is_lowercase("lowerAase"));
 }
-*/

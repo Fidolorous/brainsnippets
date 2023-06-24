@@ -6,7 +6,7 @@
 /*   By: ggyevi-s <ggyevi-s@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 11:22:38 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/21 12:31:23 by ggyevi-s         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:11:14 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_str_is_alpha(char *str)
 
 	while (*str != '\0')
 	{
+/* if string is greater or equal to 'a' AND less or equal to 'z' OR string greater or equal to 'A' AND less or equal to 'Z' include more characters and return 1
+ */   
 		if ((*str >= 97 && *str <= 122) || (*str >= 65 && *str <= 90))
 			++str;
 	else
@@ -33,4 +35,5 @@ int	ft_str_is_alpha(char *str)
 
 int	main()
 {
-	printf("%d\n", ft_str_is_alpha(.)	
+	printf("%d\n", ft_str_is_alpha("test"));
+}

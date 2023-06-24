@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggyevi-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 18:31:40 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/22 18:50:10 by ggyevi-s         ###   ########.fr       */
+/*   Created: 2023/06/21 19:03:43 by ggyevi-s          #+#    #+#             */
+/*   Updated: 2023/06/21 21:15:27 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i])
 	{
-		dest[i] = src[i];
-		i++;
+		if (str[i] >= 92 && str[i] <= 122)
+			str[i] -= 32;
+		++i;
 	}
-	dest[i] = '\0';
-	return (dest);
-}		
+	return (str);
+}
 
-/*
 int	main()
 {
-	//we give value to the chars
-	//ask someone the logic of what being printed
-	char	a[] = "b";
-	char	b[] = "c";
-
-	printf("%s\n", ft_strcpy(a, b));
+	char str[] = "thisisuppercase";
+	printf("%s\n", ft_strupcase(str));
 }
-*/

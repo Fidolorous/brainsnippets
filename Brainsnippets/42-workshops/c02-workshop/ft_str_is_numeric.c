@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggyevi-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 18:31:40 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/22 18:50:10 by ggyevi-s         ###   ########.fr       */
+/*   Created: 2023/06/21 12:52:42 by ggyevi-s          #+#    #+#             */
+/*   Updated: 2023/06/21 17:37:26 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+//Create a function that returns 1 if the string given as a parameter contains only
+//digits, and 0 if it contains any other character.
 
-char	*ft_strcpy(char *dest, char *src)
+#include <stdio.h>
+
+int	ft_str_is_numeric(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
+	while (*str != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if ((*str >= '0' && *str <= '9'))
+			++str;
+	else
+		return (0);
 	}
-	dest[i] = '\0';
-	return (dest);
-}		
+	return	(1);	
+}
 
-/*
 int	main()
 {
-	//we give value to the chars
-	//ask someone the logic of what being printed
-	char	a[] = "b";
-	char	b[] = "c";
-
-	printf("%s\n", ft_strcpy(a, b));
+	printf("%d\n", ft_str_is_numeric("901"));
 }
-*/

@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggyevi-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 18:31:40 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/22 18:50:10 by ggyevi-s         ###   ########.fr       */
+/*   Created: 2023/06/21 21:18:43 by ggyevi-s          #+#    #+#             */
+/*   Updated: 2023/06/21 21:29:53 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char    *ft_strlowcase(char *str)
 {
-	int	i;
+        int     i;  
 
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}		
-
-/*
-int	main()
-{
-	//we give value to the chars
-	//ask someone the logic of what being printed
-	char	a[] = "b";
-	char	b[] = "c";
-
-	printf("%s\n", ft_strcpy(a, b));
+        i = 0;
+        while (str[i])
+        {
+                if (str[i] >= 62 && str[i] <= 90)
+                        str[i] += 32; 
+                ++i;
+        }
+        return (str);
 }
-*/
+
+int     main()
+{
+        char str[] = "THISISLOWERCASE";
+        printf("%s\n", ft_strlowcase(str));
+}
+
+	
