@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_countdown.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggyevi-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 18:31:40 by ggyevi-s          #+#    #+#             */
-/*   Updated: 2023/06/26 17:53:26 by ggyevi-s         ###   ########.fr       */
+/*   Created: 2023/06/26 18:23:27 by ggyevi-s          #+#    #+#             */
+/*   Updated: 2023/06/26 18:31:10 by ggyevi-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
-#include<stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	main(int cat)
 {
-	int	i;
-
-	i = 0;
-	while (*(src + i) != '\0')
-	{
-		*(dest + i) = *(src + i);
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	cat = 9;
+	while(cat >= 0)
+	write(1, &cat, 1);
 }
-/*
-int	main()
-{
-	char	a[] = "b";
-	char	b[] = "c";
-
-	printf("%s\n", ft_strcpy(a, b));
-}
-*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pibouill <pibouill@student.42prague.com    +#+  +:+       +#+        */
+/*   By: vsinagl <vsinagl@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 13:25:45 by pibouill          #+#    #+#             */
-/*   Updated: 2023/06/24 20:11:21 by ggyevi-s         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:52:24 by vsinagl          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,16 @@ int	ft_atoi(char *str)
 	sign = 1;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
-// A while loop that skips any leading whitespace characters in the string str. The characters considered as whitespace are space (' ') and control characters with ASCII values between 9 and 13.
 	if (*str == '-')
 		sign = -1;
-// If the current character pointed by str is a minus sign ('-'), the sign variable is set to -1 to indicate a negative number.	
 	if (*str == '-' || *str == '+')
 		str++;
-// If the current character pointed by str is either a minus sign ('-') or a plus sign ('+'), the str pointer is incremented to skip the sign character.
 	while (*str >= '0' && *str <= '9')
 	{
 		res = res * 10 + *str - '0';
 		str++;
 	}
-// A while loop that continues as long as the current character pointed by str is a digit (0-9). Inside the loop, each digit character is converted to its corresponding integer value and added to res. The res value is updated by multiplying it by 10 and adding the digit value obtained by subtracting the ASCII value of '0' from the current character.
 	return (res * sign);
-// The final result, res, is multiplied by the sign value (1 or -1) to account for the positive or negative sign of the number.
 }
 
 char	*ft_strndup(char *src, int n)
@@ -53,15 +48,45 @@ char	*ft_strndup(char *src, int n)
 	return (new);
 }
 
-int	ft_digits_count(int nb)
+void	print_str(char *str)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (nb > 0)
+	i = 0;
+	while (str[i])
 	{
-		nb /= 10;
-		count++;
+		write(1, &str[i], 1);
+		i++;
 	}
-	return (count);
+}
+
+int	lenstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	print_in_dict(t_dict *dict, int number, int size)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	while (i < size)
+	{
+		if (dict[i].key == number)
+		{
+			str = ft_strndup(dict[i].value, lenstr(dict[i].value));
+			print_str(str);
+			free(str);
+			write(1, " ", 1);
+			return ;
+		}
+		i++;
+	}
+	write(1, "Error\n", 22);
 }
